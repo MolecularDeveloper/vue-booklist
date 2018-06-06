@@ -1,27 +1,8 @@
 <template>
   <div id="app">
     <img id="logo" src="./assets/book-logo.jpg">
-    <router-view/>
-     <div class="panel-body">
-    <table class="table table-striped">
-      <thead>
-        <tr>
-          <th>Title</th>
-          <th>Author</th>
-          <th>Cover</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr v-for="book in books">
-          <td><a v-bind:href="book.url">{{book.title}}</a></td>
-          <td>{{book.author}}</td>
-          <td><img :src="book.cover" alt="" height="200px"></td>
-          <td><span class="glyphicon glyphicon-trash" aria-hidden="true" v-on:click="removeBook(book)"></span></td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-  <div class="panel panel-default">
+      <div class="">
+        <h3 class="jumbotron">Reading List</h3>
       <div class="panel-heading">
         <h3 class="panel-title">Add New Books</h3>
       </div>
@@ -43,6 +24,25 @@
         </form>
       </div>
     </div>
+     <div class="panel-body">
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Title</th>
+          <th>Author</th>
+          <th>Cover</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr v-for="book in books">
+          <td><a v-bind:href="book.url">{{book.title}}</a></td>
+          <td>{{book.author}}</td>
+          <td><img :src="book.cover" alt="" height="200px"></td>
+          <td><span class="glyphicon glyphicon-trash" aria-hidden="true" v-on:click="removeBook(book)"></span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
   </div>
 
 </template>
@@ -109,5 +109,9 @@ th {
 }
 img#logo {
   width: 300px;
+}
+.panel-body {
+  max-width: 60%;
+  margin: 0 auto;
 }
 </style>
